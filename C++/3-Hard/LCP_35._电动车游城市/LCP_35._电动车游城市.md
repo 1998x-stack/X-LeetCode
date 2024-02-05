@@ -1,0 +1,19 @@
+[LCP 35. 电动车游城市](https://leetcode.cn/problems/DFPeFJ)
+
+[ChatGPT](https://chat.openai.com/g/g-GsMNEr76r-c-master)
+
+---
+
+## 1. 问题的内容
+**1.1 题目描述**：
+
+**1.2 示例**：
+
+**1.3 提示**:
+
+## 2. 边界情况和约束
+
+
+## 3. 算法和策略
+
+---

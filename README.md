@@ -2,7 +2,9 @@
 
 
 ## GPTs
-https://chat.openai.com/g/g-FBZzWBFZG-python-master
+
+1. [Python Master](https://chat.openai.com/g/g-FBZzWBFZG-python-master)
+2. [C++ Master](https://chat.openai.com/g/g-GsMNEr76r-c-master)
 
 ## Prompt
 ```raw
@@ -29,18 +31,21 @@ Readability Preferred with Better Name Style. Please provide a comprehensive and
 
 ## Problem README Templat
 ```raw
-## 问题的内容
-**题目描述**：
 
-**示例**：
+---
 
-**提示**:
+## 1. 问题的内容
+**1.1 题目描述**：
 
-## 边界情况和约束
+**1.2 示例**：
+
+**1.3 提示**:
+
+## 2. 边界情况和约束
 
 
-## 算法和策略
+## 3. 算法和策略
 
-
+---
 
 ```

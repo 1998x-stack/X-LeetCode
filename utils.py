@@ -1,10 +1,10 @@
 import pandas as pd
-from typing import NoReturn, Tuple
+from typing import NoReturn
 import os
 
 MD_Template = """[$question$]($url$)
 
-[ChatGPT](chat.openai.com)
+[ChatGPT](https://chat.openai.com/g/g-GsMNEr76r-c-master)
 
 ---
 
@@ -21,7 +21,6 @@ MD_Template = """[$question$]($url$)
 ## 3. 算法和策略
 
 ---
-
 """
 
 class LeetCodeDirectoryManager:
@@ -224,12 +223,12 @@ class LeetCodeMarkdownGenerator:
         print(f"Markdown file generated at {self.markdown_path}")
 
 # Example usage
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # file_path = 'leetcode_problems.xlsx'  # Update with the actual path
     # markdown_path = 'Leetcode Problems.md'  # Update with the desired Markdown file path
     # generator = LeetCodeMarkdownGenerator(file_path, markdown_path)
     # generator.run()
-    base_dir = "."
-    df = pd.read_excel("leetcode_problems.xlsx")
-    directory_manager = LeetCodeDirectoryManager(df, base_dir)
-    directory_manager.create_directories_and_files()
+    # base_dir = "."
+    # df = pd.read_excel("leetcode_problems.xlsx")
+    # directory_manager = LeetCodeDirectoryManager(df, base_dir)
+    # directory_manager.create_directories_and_files()
