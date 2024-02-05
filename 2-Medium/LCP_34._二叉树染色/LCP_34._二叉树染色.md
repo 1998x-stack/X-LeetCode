@@ -1,4 +1,9 @@
-[两数相加](https://leetcode.cn/problems/add-two-numbers)
+[LCP 34. 二叉树染色](https://leetcode.cn/problems/er-cha-shu-ran-se-UGC)
+
+[ChatGPT](chat.openai.com)
+
+---
+
 ## 1. 问题的内容
 **1.1 题目描述**：
 
@@ -10,4 +15,6 @@
 
 
 ## 3. 算法和策略
+
+---
 

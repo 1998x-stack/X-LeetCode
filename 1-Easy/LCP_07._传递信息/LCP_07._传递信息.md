@@ -1,4 +1,9 @@
-[两数相加](https://leetcode.cn/problems/add-two-numbers)
+[LCP 07. 传递信息](https://leetcode.cn/problems/chuan-di-xin-xi)
+
+[ChatGPT](chat.openai.com)
+
+---
+
 ## 1. 问题的内容
 **1.1 题目描述**：
 
@@ -10,4 +15,6 @@
 
 
 ## 3. 算法和策略
+
+---
 

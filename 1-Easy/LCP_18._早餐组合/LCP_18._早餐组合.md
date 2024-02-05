@@ -1,4 +1,9 @@
-[两数相加](https://leetcode.cn/problems/add-two-numbers)
+[LCP 18. 早餐组合](https://leetcode.cn/problems/2vYnGI)
+
+[ChatGPT](chat.openai.com)
+
+---
+
 ## 1. 问题的内容
 **1.1 题目描述**：
 
@@ -10,4 +15,6 @@
 
 
 ## 3. 算法和策略
+
+---
 

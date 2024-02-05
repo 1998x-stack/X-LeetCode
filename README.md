@@ -22,6 +22,8 @@ DO:
 Notice:
 1. step by step extreme detailed
 2. please in Chinese Language
+
+Readability Preferred with Better Name Style. Please provide a comprehensive and well-structured code solution for an Industrial scenario. The code should include robust classes or functions that have been thoroughly checked for correct boundary conditions. It should also adhere to the guidelines specified in the "Google style guides". The solution should prioritize high scalability and should not be a demo or a snippet. It is crucial that no part of the code is omitted. Furthermore, please include Chinese comments following the PEP 8 style guide for all key steps, and use DocString with Examples following the PEP 257 style guide and use typing for type annotations. The code should be efficient, and important information should be printed. **When the code is finished**, please perform a key step to recheck for its correctness and logic.
 ```
 
 

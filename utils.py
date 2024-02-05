@@ -2,7 +2,12 @@ import pandas as pd
 from typing import NoReturn, Tuple
 import os
 
-MD_Template = """[两数相加](https://leetcode.cn/problems/add-two-numbers)
+MD_Template = """[$question$]($url$)
+
+[ChatGPT](chat.openai.com)
+
+---
+
 ## 1. 问题的内容
 **1.1 题目描述**：
 
@@ -14,6 +19,8 @@ MD_Template = """[两数相加](https://leetcode.cn/problems/add-two-numbers)
 
 
 ## 3. 算法和策略
+
+---
 
 """
 
@@ -54,7 +61,7 @@ class LeetCodeDirectoryManager:
 
             self.make_dir(full_path)
             self.create_file(os.path.join(full_path, f"{question_dir}.py"))
-            self.create_file(os.path.join(full_path, f"{question_dir}.md"))
+            self.create_file(os.path.join(full_path, f"{question_dir}.md"), row['question'], row['url'])
 
     @staticmethod
     def format_question_name(name: str) -> str:
@@ -102,7 +109,7 @@ class LeetCodeDirectoryManager:
         os.makedirs(path, exist_ok=True)
 
     @staticmethod
-    def create_file(path: str) -> NoReturn:
+    def create_file(path: str, question = '', url = '') -> NoReturn:
         """
         Creates an empty file at the specified path.
         
@@ -111,7 +118,7 @@ class LeetCodeDirectoryManager:
         """
         with open(path, 'w') as file:
             if path.endswith(".md"):
-                file.write(MD_Template)
+                file.write(MD_Template.replace("$question$", question).replace("$url$", url))
             file.close()
 
 
@@ -190,9 +197,11 @@ class LeetCodeMarkdownGenerator:
             str: The Markdown table as a string.
         """
         # Define the Markdown table header
-        markdown_content = "| Question | URL | People | Rate | Level |\n|---|---|---|---|---|\n"
+        markdown_content = "| Question | Markdown | People | Rate | Level |\n|---|---|---|---|---|\n"
         for _, row in df.iterrows():
-            markdown_content += f"| {row['formatted_question']} | [Link]({row['url']}) | {row['people']} | {row['rate']} | {row['level']} |\n"
+            folder = '1-Easy' if row['level'] == '简单' else '2-Medium' if row['level'] == '中等' else '3-Hard'
+            markdown_path = f"{folder}/{row['formatted_question'].replace(' ', '_')}/{row['formatted_question'].replace(' ', '_')}.md"
+            markdown_content += f"| [{row['formatted_question']}]({row['url']}) | [Markdown]({markdown_path}) | {row['people']} | {row['rate']} | {row['level']} |\n"
         return markdown_content
 
     def save_markdown(self, content: str):
@@ -214,13 +223,13 @@ class LeetCodeMarkdownGenerator:
         self.save_markdown(markdown_content)
         print(f"Markdown file generated at {self.markdown_path}")
 
-# # Example usage
-# if __name__ == "__main__":
-#     # file_path = 'leetcode_problems.xlsx'  # Update with the actual path
-#     # markdown_path = 'Leetcode Problems.md'  # Update with the desired Markdown file path
-#     # generator = LeetCodeMarkdownGenerator(file_path, markdown_path)
-#     # generator.run()
-#     base_dir = "."
-#     df = pd.read_excel("leetcode_problems.xlsx")
-#     directory_manager = LeetCodeDirectoryManager(df, base_dir)
-#     directory_manager.create_directories_and_files()
+# Example usage
+if __name__ == "__main__":
+    # file_path = 'leetcode_problems.xlsx'  # Update with the actual path
+    # markdown_path = 'Leetcode Problems.md'  # Update with the desired Markdown file path
+    # generator = LeetCodeMarkdownGenerator(file_path, markdown_path)
+    # generator.run()
+    base_dir = "."
+    df = pd.read_excel("leetcode_problems.xlsx")
+    directory_manager = LeetCodeDirectoryManager(df, base_dir)
+    directory_manager.create_directories_and_files()
