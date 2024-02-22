@@ -59,7 +59,7 @@ class LeetCodeDirectoryManager:
             full_path = os.path.join(self.base_dir, level_dir, question_dir)
 
             self.make_dir(full_path)
-            self.create_file(os.path.join(full_path, f"{question_dir}.py"))
+            self.create_file(os.path.join(full_path, f"{question_dir}.cpp"))
             self.create_file(os.path.join(full_path, f"{question_dir}.md"), row['question'], row['url'])
 
     @staticmethod
@@ -196,11 +196,16 @@ class LeetCodeMarkdownGenerator:
             str: The Markdown table as a string.
         """
         # Define the Markdown table header
-        markdown_content = "| Question | Markdown | People | Rate | Level |\n|---|---|---|---|---|\n"
+        markdown_content = "| Question | PythonSolution | CPPSolution | People | Rate | Level |\n|---|---|---|---|---|---|\n"
         for _, row in df.iterrows():
             folder = '1-Easy' if row['level'] == '简单' else '2-Medium' if row['level'] == '中等' else '3-Hard'
-            markdown_path = f"{folder}/{row['formatted_question'].replace(' ', '_')}/{row['formatted_question'].replace(' ', '_')}.md"
-            markdown_content += f"| [{row['formatted_question']}]({row['url']}) | [Markdown]({markdown_path}) | {row['people']} | {row['rate']} | {row['level']} |\n"
+            python_markdown_path = f"Python/{folder}/{row['formatted_question'].replace(' ', '_')}/{row['formatted_question'].replace(' ', '_')}.md"
+            cpp_markdown_path = f"C++/{folder}/{row['formatted_question'].replace(' ', '_')}/{row['formatted_question'].replace(' ', '_')}.md"
+            question = f"[{row['formatted_question']}]({row['url']})"
+            python_sol = f"[PythonSolution]({python_markdown_path})"
+            cpp_sol = f"[CPPSolution]({cpp_markdown_path})"
+            
+            markdown_content += f"| {question} | {python_sol} | {cpp_sol} | {row['people']} | {row['rate']} | {row['level']} |\n"
         return markdown_content
 
     def save_markdown(self, content: str):
@@ -222,13 +227,13 @@ class LeetCodeMarkdownGenerator:
         self.save_markdown(markdown_content)
         print(f"Markdown file generated at {self.markdown_path}")
 
-# Example usage
+# # Example usage
 # if __name__ == "__main__":
-    # file_path = 'leetcode_problems.xlsx'  # Update with the actual path
-    # markdown_path = 'Leetcode Problems.md'  # Update with the desired Markdown file path
-    # generator = LeetCodeMarkdownGenerator(file_path, markdown_path)
-    # generator.run()
-    # base_dir = "."
-    # df = pd.read_excel("leetcode_problems.xlsx")
-    # directory_manager = LeetCodeDirectoryManager(df, base_dir)
-    # directory_manager.create_directories_and_files()
+#     # file_path = 'leetcode_problems.xlsx'  # Update with the actual path
+#     # markdown_path = 'Leetcode Problems.md'  # Update with the desired Markdown file path
+#     # generator = LeetCodeMarkdownGenerator(file_path, markdown_path)
+#     # generator.run()
+#     # base_dir = "."
+#     # df = pd.read_excel("leetcode_problems.xlsx")
+#     # directory_manager = LeetCodeDirectoryManager(df, base_dir)
+#     # directory_manager.create_directories_and_files()
