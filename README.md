@@ -16,14 +16,16 @@
 
 Question:
 `
-2. 两数相加	https://leetcode.cn/problems/add-two-numbers
+[80. 删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii)
 `
+
 DO:
 - implement and run on code interpreter and implement
 - visualize
 Notice:
 1. step by step extreme detailed
-2. please in Chinese Language
+2. import typing package
+3. please in Chinese Language
 
 Readability Preferred with Better Name Style. Please provide a comprehensive and well-structured code solution for an Industrial scenario. The code should include robust classes or functions that have been thoroughly checked for correct boundary conditions. It should also adhere to the guidelines specified in the "Google style guides". The solution should prioritize high scalability and should not be a demo or a snippet. It is crucial that no part of the code is omitted. Furthermore, please include Chinese comments following the PEP 8 style guide for all key steps, and use DocString following the PEP 257 style guide and use typing for type annotations. The code should be efficient, and important information should be printed. **When the code is finished**, please perform a key step to recheck for its correctness and logic.
 ```
@@ -33,19 +35,19 @@ Readability Preferred with Better Name Style. Please provide a comprehensive and
 1. 详细列出问题的内容，示例和提示
 2. 分析边界情况和约束
 3. 设计算法和策略 extreme detailed
-4. On code interpreter 实现且保存到本地文件 C++ 代码，对关键步骤注释
+4. On code interpreter 实现且保存到本地文件 C++ 代码(with main function)，对关键步骤注释
 5. On code interpreter 使用 Python 进行调试与运行 C++ 代码
 
 Question:
 `
 [1. 两数之和](https://leetcode.cn/problems/two-sum)
 `
-DO:
-- implement and run on code interpreter and implement
-- visualize
+DO implement with test and run on code interpreter
+
 Notice:
 1. step by step extreme detailed
-2. please in Chinese Language
+2. use namespace std please
+3. please in Chinese Language
 
 PLEASE Automatic DO Task_{i+1} when Task_i is finished until ALL TASKS are completed. PLEASE NEVER EVER STOP.
 ```
