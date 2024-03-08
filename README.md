@@ -16,7 +16,7 @@
 
 Question:
 `
-[80. 删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii)
+[527. 单词缩写](https://leetcode.cn/problems/word-abbreviation)
 `
 
 DO:
