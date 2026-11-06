@@ -115,10 +115,14 @@ class LeetCodeDirectoryManager:
         Args:
             path (str): The path where the file will be created.
         """
-        with open(path, 'w') as file:
-            if path.endswith(".md"):
-                file.write(MD_Template.replace("$question$", question).replace("$url$", url))
-            file.close()
+        # Exclusive creation prevents reruns from truncating solved exercises.
+        try:
+            with open(path, 'x', encoding='utf-8') as file:
+                if path.endswith(".md"):
+                    file.write(MD_Template.replace("$question$", question).replace("$url$", url))
+        except FileExistsError:
+            # Existing solutions and notes belong to the user; leave them untouched.
+            return
 
 
 
